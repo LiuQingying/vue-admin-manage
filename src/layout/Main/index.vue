@@ -14,14 +14,13 @@
 <script lang="ts" setup>
   import Theme from '@/components/Theme/index.vue'
   import { computed, ref } from 'vue'
-  import {useSettingStore} from "@/store/modules/setting"
-  import {usePermissionStore} from "@/store/modules/permission"
+  import { useSettingStore } from '@/store/modules/setting'
+  import { usePermissionStore } from '@/store/modules/permission'
   const SettingStore = useSettingStore()
   const PermissionStor = usePermissionStore()
 
-  const cacheRoutes = computed(() =>PermissionStor.getCacheRoutes())
+  const cacheRoutes = computed(() => PermissionStor.getCacheRoutes())
   const isReload = computed(() => SettingStore.isReload)
-
 </script>
 
 <style lang="scss" scoped>

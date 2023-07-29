@@ -63,11 +63,11 @@
 <script lang="ts" setup>
   import { ref, reactive } from 'vue'
   import type { FormInstance } from 'element-plus'
-  import { ElNotification } from "element-plus";
+  import { ElNotification } from 'element-plus'
   import { useRouter } from 'vue-router'
-  import {useUserStore} from "@/store/modules/user"
+  import { useUserStore } from '@/store/modules/user'
   import { ElMessage } from 'element-plus'
-  import {getTimeState} from '@/utils/index'
+  import { getTimeState } from '@/utils/index'
 
   const ruleFormRef = ref<FormInstance>()
   const router = useRouter()
@@ -113,16 +113,16 @@
     formEl.validate(async (valid) => {
       if (valid) {
         // 登录
-        await UserStore.login( ruleForm)
+        await UserStore.login(ruleForm)
         router.push({
           path: '/',
         })
         ElNotification({
           title: getTimeState(),
-          message: "欢迎登录 Vue Admin Perfect",
-          type: "success",
-          duration: 3000
-        });
+          message: '欢迎登录 Vue Admin Perfect',
+          type: 'success',
+          duration: 3000,
+        })
       } else {
         console.log('error submit!')
         return false
@@ -131,5 +131,5 @@
   }
 </script>
 <style lang="scss" scoped>
-  @import "./index";
+  @import './index';
 </style>
